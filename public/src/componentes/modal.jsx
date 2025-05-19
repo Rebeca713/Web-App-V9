@@ -9,7 +9,7 @@ const VeterinarianModal = ({ show, message, onClose }) => {
   if (!show) return null;
 
   const handleClose = () => {
-    if(message==="Has iniciado Sesión"){
+    if(message==="Has iniciado sesión"){
       navigate("/camilo");
     }else{
       navigate("/login");
@@ -36,4 +36,3 @@ const VeterinarianModal = ({ show, message, onClose }) => {
 };
 
 export default VeterinarianModal;
-

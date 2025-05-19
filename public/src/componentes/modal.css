@@ -104,3 +104,11 @@
 .action-button:hover {
   background-color: #5C4033;
 }
+
+.ajustes-menu input {
+  padding: 8px;
+  margin-bottom: 10px;
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}

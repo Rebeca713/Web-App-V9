@@ -34,6 +34,8 @@ function App() {
   const [gemas, setGemas] = useState(0); // inicial, editable
   const [modalVisible, setModalVisible] = useState(false);
   const [message, setMessage] = useState('');
+  const [cambiarNombreActivo, setCambiarNombreActivo] = useState(false);
+  const [nuevoNombre, setNuevoNombre] = useState('');
 
   
   const toggleAjustes = () => {
@@ -119,6 +121,24 @@ const aumentargemas = async (cantidad) => {
   setTimeout(() => {
     setAvatar(imagen); // Vuelve a la imagen original después de 5 segundos
   }, 5000);
+};
+
+const handleCambiarNombre = async () => {
+  if (!nuevoNombre.trim()) {
+    alert("Por favor ingresa un nombre válido.");
+    return;
+  }
+
+  try {
+    await updateUserNombre(usuario.uid, nuevoNombre);
+    setUsuario((prev) => ({ ...prev, nombre: nuevoNombre }));
+    setCambiarNombreActivo(false);
+    setNuevoNombre('');
+    alert("Nombre actualizado correctamente.");
+  } catch (error) {
+    console.error("Error al cambiar el nombre:", error);
+    alert("Hubo un error al cambiar el nombre.");
+  }
 };
 
 
@@ -227,7 +247,7 @@ const aumentargemas = async (cantidad) => {
             <h2>Personalizar Usuario</h2>
             <ul>
   <li>
-    <button>
+    <button onClick={() => setCambiarNombreActivo(true)}>
       ✏️ Cambiar Nombre
     </button>
   </li>
@@ -241,12 +261,23 @@ const aumentargemas = async (cantidad) => {
         </div>
       )}
 
+      {cambiarNombreActivo && (
+  <div className="ajustes-menu-overlay">
+    <div className="ajustes-menu">
+      <p className="cerrar-menu" onClick={() => setCambiarNombreActivo(false)}>✖</p>
+      <h2>✏️ Cambiar nombre</h2>
+      <input
+        type="text"
+        placeholder="Nuevo nombre"
+        value={nuevoNombre}
+        onChange={(e) => setNuevoNombre(e.target.value)}
+      />
+      <button onClick={handleCambiarNombre}>Guardar</button>
+    </div>
+  </div>
+)}
     </div>
   );
 }
 
 export default App;
-
-
-
-

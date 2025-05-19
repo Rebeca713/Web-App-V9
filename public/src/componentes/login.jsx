@@ -31,7 +31,7 @@ const handleSubmit = async (e) => {
     setSuccess(true);
     setError('');
     console.log('Login exitoso. ID de usuario:', user.uid);
-    mostrarModalInicioSesion("Has iniciado Sesión"); // Mostrar modal, sin cerrar sesión
+    mostrarModalInicioSesion("Has iniciado sesión"); // Mostrar modal, sin cerrar sesión
   } catch (error) {
     setSuccess(false);
     setError("Contraseña o Email incorrecto");

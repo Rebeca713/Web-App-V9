@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500;700&display=swap');
+
+/* Paleta de colores profesionales en Sepia y tonos cálidos */
+:root {
+  --primary-color: #5C4033;  /* Tonalidad Sepia */
+  --secondary-color: #D7C49E; /* Tonos dorados suaves */
+  --background-color: #FAF3E0; /* Color de fondo claro */
+  --button-bg: #7A5C48; /* Color de fondo del botón */
+  --button-hover-bg: #9B7C5D; /* Hover del botón */
+  --text-color: #4A3C31; /* Texto oscuro */
+  --error-color: #FF5C5C; /* Rojo de error */
+  --link-color: #D1A15B; /* Color de los enlaces */
+  --link-hover-color: #5C4033; /* Hover de los enlaces */
+}
+
+body {
+  font-family: 'Roboto Slab', serif;
+  background-color: var(--background-color);
+  margin: 0;
+  padding: 0;
+}
+
+.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-size: cover;
+  opacity: 0.9;
+}
+
+.login-container {
+  background-color: var(--background-color);
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  padding: 40px;
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+
+.submit-button {
+  width: 100%;
+  padding: 14px;
+  font-size: 16px;
+  background-color: var(--button-bg);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: var(--button-hover-bg);
+}
+
+h2 {
+  font-size: 28px;
+  color: var(--primary-color);
+  margin-bottom: 30px;
+  font-weight: 700;
+}
+
+.input-group {
+  margin-bottom: 20px;
+}
+
+.form-control {
+  width: 100%;
+  padding: 15px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  box-sizing: border-box;
+  transition: border 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: var(--primary-color);
+  outline: none;
+}
+
+.error-message {
+  color: var(--error-color);
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.footer-links {
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.footer-links a {
+  color: var(--link-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: var(--link-hover-color);
+}
+
+.back-link {
+  color: black !important;
+  text-decoration: none;
+}
+
+.back-link:hover {
+  color: black !important;
+}
+
+@media (max-width: 600px) {
+  .login-container {
+    padding: 20px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+}
+
+.forgot-password-link {
+  color: #007bff !important; /* Fuerza el color azul tipo enlace */
+  text-decoration: underline;
+}
+
+.forgot-password-link:hover {
+  color: #0150a3 !important; /* Azul más oscuro al pasar el cursor */
+}
